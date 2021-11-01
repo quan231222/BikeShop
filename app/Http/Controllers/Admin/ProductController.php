@@ -17,6 +17,7 @@ class ProductController extends Controller
         $this->productService = $productService;
     }
 
+    // Load
     public function index()
     {
         return view('admin.product.list', [
@@ -25,6 +26,7 @@ class ProductController extends Controller
         ]);
     }
 
+    // Load trang thêm
     public function create()
     {
         return view('admin.product.add', [
@@ -33,6 +35,7 @@ class ProductController extends Controller
         ]);
     }
 
+    // Thêm
     public function store(ProductRequest $request)
     {
         $this->productService->insert($request);
@@ -40,6 +43,7 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
+    // Show
     public function show(Product $product)
     {
         return view('admin.product.edit', [
@@ -49,11 +53,7 @@ class ProductController extends Controller
         ]);
     }
 
-    public function edit($id)
-    {
-        //
-    }
-
+    // Cập nhật
     public function update(Request $request, Product $product)
     {
         $result = $this->productService->update($request, $product);
@@ -63,6 +63,7 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
+    // Xoá
     public function destroy(Request $request)
     {
         $result = $this->productService->delete($request);

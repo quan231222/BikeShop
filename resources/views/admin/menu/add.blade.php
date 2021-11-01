@@ -17,9 +17,11 @@
                 <label>Danh Mục</label>
                 <select class="form-control" name="parent_id">
                     <option value="0"> Danh Mục Cha</option>
+                    {{-- Load--}}
                     @foreach($menus as $menu)
                         <option value="{{ $menu->id }}">{{ $menu->name }}</option>
                     @endforeach
+                    {{-- /Load--}}
                 </select>
             </div>
 

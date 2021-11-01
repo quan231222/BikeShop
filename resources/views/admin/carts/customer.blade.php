@@ -13,6 +13,7 @@
         </tr>
         </thead>
         <tbody>
+        {{-- Load --}}
         @foreach($customers as $key => $customer)
             <tr>
                 <td>{{ $customer->id }}</td>
@@ -31,9 +32,11 @@
                 </td>
             </tr>
         @endforeach
+        {{-- /Load --}}
         </tbody>
     </table>
 
+    {{-- Phân trang --}}
     <div class="card-footer clearfix">
         {!! $customers->links() !!}
     </div>

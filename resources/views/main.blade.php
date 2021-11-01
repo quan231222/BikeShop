@@ -13,8 +13,10 @@
 	<!-- Cart -->
 
     @include('cart')
-
+    
+    {{-- Phần nội dung thay đổi --}}
 	@yield('content')
+    {{-- Phần nội dung thay đổi --}}
 
     @include('footer')
 

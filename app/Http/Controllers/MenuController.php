@@ -14,6 +14,7 @@ class MenuController extends Controller
         $this->menuService = $menuService;
     }
 
+    // Load danh mục
     public function index(Request $request, $id, $slug = '')
     {
         $menu = $this->menuService->getId($id);

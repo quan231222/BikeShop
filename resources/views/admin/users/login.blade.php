@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,7 @@
                 <a href="#" class="h1"><b>Admin</b></a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+                <p class="login-box-msg">Đăng Nhập</p>
                 @include('admin.alert')
                 <form action="/admin/users/login/store" method="post">
                     <div class="input-group mb-3">
@@ -32,17 +31,17 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-7">
                         <div class="icheck-primary">
                             <input type="checkbox" name='remember' id="remember">
                             <label for="remember">
-                            Remember Me
+                            Ghi nhớ tôi
                             </label>
                         </div>
                         </div>
                         <!-- /.col -->
-                        <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <div class="col-5">
+                        <button type="submit" class="btn btn-primary btn-block">Đăng Nhập</button>
                         </div>
                         <!-- /.col -->
                     </div>

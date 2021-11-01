@@ -16,6 +16,7 @@ class CartController extends Controller
         $this->cart = $cart;
     }
 
+    // Load
     public function index()
     {
         return view('admin.carts.customer', [
@@ -24,6 +25,7 @@ class CartController extends Controller
         ]);
     }
 
+    // Show 
     public function show(Customer $customer)
     {
         $carts = $this->cart->getProductForCart($customer);

@@ -6,12 +6,13 @@
                 Trang Chủ
                 <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
             </a>
-
+			{{-- Load navlink --}}
             <a href="/danh-muc/{{ $product->menu->id }}-{{ \Str::slug($product->menu->name) }}" 
                 class="stext-109 cl8 hov-cl1 trans-04">
                 {{ $product->menu->name }}
                 <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
             </a>
+			{{-- /Load navlink --}}
 
             <span class="stext-109 cl4">
                 {{ $title }}
@@ -145,7 +146,7 @@
                     Các Sản Phẩm Liên Quan
                 </h3>
             </div>
-
+			{{-- Load list sản phẩm --}}
             @include('products.list')
         </div>
     </section>

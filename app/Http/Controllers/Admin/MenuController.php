@@ -19,7 +19,7 @@ class MenuController extends Controller
         $this->menuService = $menuService;
     }
 
-
+    // Load trang thêm
     public function create()
     {
         return view('admin.menu.add', [
@@ -35,6 +35,7 @@ class MenuController extends Controller
         return redirect()->back();
     }
 
+    // Load
     public function index()
     {
         return view('admin.menu.list', [
@@ -43,6 +44,7 @@ class MenuController extends Controller
         ]);
     }
 
+    // Show
     public function show(Menu $menu)
     {
         return view('admin.menu.edit', [
@@ -52,6 +54,7 @@ class MenuController extends Controller
         ]);
     }
 
+    // Cập Nhật
     public function update(Menu $menu, CreateFormRequest $request)
     {
         $this->menuService->update($request, $menu);
@@ -60,6 +63,7 @@ class MenuController extends Controller
     }
 
 
+    // Xoá
     public function destroy(Request $request): JsonResponse
     {
         $result = $this->menuService->destroy($request);

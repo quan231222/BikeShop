@@ -15,6 +15,7 @@ class CartController extends Controller
         $this->cartService = $cartService;
     }
 
+    // Load
     public function index(Request $request)
     {
         $result = $this->cartService->create($request);
@@ -26,6 +27,7 @@ class CartController extends Controller
         return redirect('/carts');
     }
 
+    // Show
     public function show()
     {
         $products = $this->cartService->getProduct();
@@ -37,6 +39,7 @@ class CartController extends Controller
         ]);
     }
 
+    // Cập nhật
     public function update(Request $request)
     {
         $this->cartService->update($request);
@@ -44,6 +47,7 @@ class CartController extends Controller
         return redirect('/carts');
     }
 
+    // Xoá
     public function remove($id = 0)
     {
         $this->cartService->remove($id);
@@ -51,6 +55,7 @@ class CartController extends Controller
         return redirect('/carts');
     }
 
+    // Thêm
     public function addCart(Request $request)
     {
         $this->cartService->addCart($request);

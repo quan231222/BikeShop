@@ -3,11 +3,13 @@
 @section('content')
     <div class="customer mt-3">
         <ul>
+            {{-- Load --}}
             <li>Tên khách hàng: <strong>{{ $customer->name }}</strong></li>
             <li>Số điện thoại: <strong>{{ $customer->phone }}</strong></li>
             <li>Địa chỉ: <strong>{{ $customer->address }}</strong></li>
             <li>Email: <strong>{{ $customer->email }}</strong></li>
             <li>Ghi chú: <strong>{{ $customer->content }}</strong></li>
+            {{-- /Load --}}
         </ul>
     </div>
 
@@ -22,7 +24,7 @@
                 <th class="column-4">Quantity</th>
                 <th class="column-5">Total</th>
             </tr>
-
+            {{-- Load --}}
             @foreach($carts as $key => $cart)
                 @php
                     $price = $cart->price * $cart->pty;
@@ -40,6 +42,7 @@
                     <td class="column-5">{{ number_format($price, 0, '', '.') }}</td>
                 </tr>
             @endforeach
+            {{-- /Load --}}
                 <tr>
                     <td colspan="4" class="text-right">Tổng Tiền</td>
                     <td>{{ number_format($total, 0, '', '.') }}</td>

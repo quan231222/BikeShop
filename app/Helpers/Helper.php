@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 
 class Helper
 {
+    // Helper load list
     public static function menu($menus, $parent_id = 0, $char = ' ')
     {
         $html = '';
@@ -40,12 +41,14 @@ class Helper
         return $html;
     }
 
+    // Tuỳ chọn active
     public static function active($active = 0): string
     {
         return $active == 0 ? '<span class="btn btn-danger btn-xs">NO</span>'
             : '<span class="btn btn-success btn-xs">YES</span>';
     }
 
+    // Helper cho load danh mục 
     public static function menus($menus, $parent_id = 0)
     {
         $html = '';
@@ -72,6 +75,7 @@ class Helper
         return $html;
     }
 
+    // Kiểm tra danh mục con
     public static function isChild($menus, $id)
     {
         foreach ($menus as $menu) {
@@ -82,6 +86,7 @@ class Helper
         return false;
     }
 
+    // Kiểm tra giá và format chấm số
     public static function price($price = 0, $priceSale = 0)
     {
         if ($priceSale != 0) return number_format($priceSale);

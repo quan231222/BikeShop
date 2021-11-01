@@ -20,6 +20,7 @@ class MainController extends Controller
         $this->product = $product;
     }
 
+    // Load
     public function index()
     {
         return view('home', [
@@ -30,6 +31,7 @@ class MainController extends Controller
         ]);
     }
 
+    // Load trang about
     public function about()
     {
         return view('about', [
@@ -37,6 +39,7 @@ class MainController extends Controller
         ]);
     }
 
+    // Load trang liên hệ
     public function contact()
     {
         return view('contact', [
@@ -44,6 +47,7 @@ class MainController extends Controller
         ]);
     }
 
+    // Load all sản phẩm
     public function loadProduct(Request $request)
     {
         $page = $request->input('page', 0);

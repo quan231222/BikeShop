@@ -16,6 +16,7 @@ class SliderController extends Controller
         $this->slider = $slider;
     }
 
+    // Load trang thêm
     public function create()
     {
         return view('admin.slider.add', [
@@ -23,6 +24,7 @@ class SliderController extends Controller
         ]);
     }
 
+    // Thêm
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -36,6 +38,7 @@ class SliderController extends Controller
         return redirect()->back();
     }
 
+    // Load
     public function index()
     {
         return view('admin.slider.list', [
@@ -44,6 +47,7 @@ class SliderController extends Controller
         ]);
     }
 
+    // Thêm
     public function show(Slider $slider)
     {
         return view('admin.slider.edit', [
@@ -52,6 +56,7 @@ class SliderController extends Controller
         ]);
     }
 
+    // Cập nhật
     public function update(Request $request, Slider $slider)
     {
         $this->validate($request, [
@@ -68,6 +73,7 @@ class SliderController extends Controller
         return redirect()->back();
     }
 
+    // Xoá
     public function destroy(Request $request)
     {
         $result = $this->slider->destroy($request);

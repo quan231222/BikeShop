@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
+    // Load 
     public function index()
     {
         return view('admin.users.login', [
@@ -16,13 +17,15 @@ class LoginController extends Controller
         ]);
     }
 
-    public function store(Request $request) {
+    // Đăng nhập
+    public function store(Request $request)
+    {
         $this->validate($request, [
             'email' => 'required|email:filter',
             'password' => 'required'
-        ]); 
+        ]);
 
-        if(Auth::attempt([
+        if (Auth::attempt([
             'email' => $request->input('email'),
             'password' => $request->input('password')
         ], $request->input('remember'))) {
